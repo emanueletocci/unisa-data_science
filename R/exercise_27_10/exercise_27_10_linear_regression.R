@@ -27,8 +27,8 @@
 # the "Boston Housing dataset". You can have access to this dataset after loading the library MASS
 # (look for the "Boston" object).
 
-install.packages("corrplot")
-install.packages("scatterplot3d")
+# install.packages("corrplot")
+# install.packages("scatterplot3d")
 
 library(MASS) #Carica la libreria MASS
 data("Boston") #Carica il dataset Boston, ora lo possiamo usare usando "Boston"
@@ -55,7 +55,7 @@ cor_matrix <- cor(ds) #matrice di correlazione
 cor_matrix #check al volo
 
 library(corrplot) #carichiamo corrplot se no non lo possiamo usare
-corrplot(cor_matrix) #visualizzazione grafica della matrice di correlazione
+corrplot(cor_matrix, method = "color", addCoef.col = "black", number.cex = 0.7) #visualizzazione grafica della matrice di correlazione
 
 cor(medv, ds) #correlazione diretta tra le 10 colonne e medv (basta anche solo iniziare l'esercizio da qui)
 pairs(ds[,1:11]) #vediamo le coppie di correlazione tra tutte le colonne (considera solo con medv)
